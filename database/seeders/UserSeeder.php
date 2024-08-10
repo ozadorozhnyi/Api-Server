@@ -2,12 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Post;
 use Database\Seeders\Traits\DisableForeignKeys;
 use Database\Seeders\Traits\TruncateTable;
+use DB;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class PostSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     use TruncateTable;
     use DisableForeignKeys;
@@ -20,8 +21,8 @@ class PostSeeder extends Seeder
     public function run()
     {
         $this->disableForeignKeys();
-        $this->truncate('posts');
-        Post::factory(3)->untitled()->create();
+        $this->truncate('users');
+        User::factory(10)->create();
         $this->enableForeignKeys();
     }
 }
