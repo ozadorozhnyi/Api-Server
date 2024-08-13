@@ -47,6 +47,11 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
+
+        // explicit route binding
+//        Route::bind('user', function ($value, $route) {
+//            return 12345;
+//        });
     }
 
     /**
